@@ -1,0 +1,57 @@
+\documentclass{article}
+
+\begin{document}
+
+<<echo=FALSE>>=
+fhandle <- 'SMI_001WR 20120326_011 - Sleep Deprived SACCADES (1) (1).txt'
+
+dfile <- read.csv(fhandle,header=TRUE,sep='\t',skip = 9)
+@
+
+<<echo=FALSE,results="asis">>=
+library(xtable)
+xtable(summary(dfile[c(6,11,12,14)]))
+@
+<<>>=
+boxplot(dfile[c(12,14)],outline= TRUE)
+@
+
+<<>>=
+boxplot(dfile[6],outline= TRUE,  main = 'Duration')
+
+<<>>=
+boxplot(dfile[11],outline= TRUE, main = 'Amplitude')
+@
+@
+<<echo=FALSE>>=
+graph1 <- hist(dfile$Duration,plot = TRUE,breaks='fd')
+
+@
+<<echo=FALSE>>=
+graph1 <- hist(dfile$Average.Speed,plot = TRUE,breaks='fd')
+
+@
+<<>>=
+graph1 <- hist(dfile$Peak.Speed,plot = TRUE,breaks='fd')
+
+@
+<<>>=
+graph1 <- hist(dfile$Amplitude,plot = TRUE,breaks='fd')
+
+@
+
+<<>>=
+model = lm(dfile$Amplitude~dfile$Duration)
+plot(dfile$Duration,dfile$Amplitude)
+abline(model$coefficients,col='red')
+cor(dfile$Duration,dfile$Amplitude)
+@
+<<echo=FALSE>>=
+library(mvoutlier)
+#subset(dfile, select = c(6,11,12,14), )
+uni.plot(dfile[c(6,11,12,14)])
+
+@
+
+
+\end{document}

@@ -1,0 +1,7 @@
+attach(newDfile)
+par(fig=c(0,0.8,0,0.8))
+plot(Amplitude,Peak.Speed, pch= 20)
+par(fig=c(0,0.8,0.55,1), new=TRUE)
+hist(Amplitude, horizontal=TRUE, axes=FALSE)
+par(fig=c(0.65,1,0,0.8),new=TRUE)
+hist(Peak.Speed,axes=FALSE)
