@@ -117,4 +117,12 @@ X <- data.frame(Amplitude = newDfile$Amplitude,Peak.Speed = newDfile$Peak.Speed)
 scatterBarNorm(X, xlab='Amplitude', ylab='Peak Speed')
 @
 
+\section{Creating minute bins}
+The idea of creating a continuous average using a window might be difficult as we have uneven time events. The saccades do not happen at regular intervals.
+Using the ``Conversion for ocular events.docx'' document as a guide, the Start time column can be used to generate a column of ``factors'' (an R data type) to identify the time bin that each saccade occured in. The factors can then be used to calculate minute averages.
+
+In the STATA file, the start time in $\mu$ seconds is converted to seconds by division by 1,000,000. At this stage, this seems unnecessary. I may change my mind later but I don't see a reason for doing this here.
+
+
+
 \end{document}
