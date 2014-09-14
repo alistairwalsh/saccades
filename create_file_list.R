@@ -17,8 +17,11 @@ folders = list.dirs("~/Dropbox/Ocular data/raw data")
 list.files(folders[2])
 list.files(folders[3])
 
+saccade_data_file_list = NULL
 for (f in folders[2:3]){
+ 
   for (i in list.files(f)) {
-    print(paste(f,i,sep='/'))
+    saccade_data_file_list = append(saccade_data_file_list,paste(f,i,sep='/'))
   }
+  
 }
