@@ -1,4 +1,4 @@
-fhandle <- 'SMI_001WR 20120326_011 - Sleep Deprived SACCADES (1) (1).txt'
+fhandle <- 'SMI_001WR 20120326_011 - Sleep Deprived SACCADES.txt'
 
 dfile <- read.csv(fhandle,header=TRUE,sep='\t',skip = 9)
 
