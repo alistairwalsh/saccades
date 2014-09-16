@@ -1,0 +1,49 @@
+# Notes on saccades #
+-----------------------------
+
+**Al:**
+
+WR (Rested) 6581387 ﾠmissing 
+
+Hey why does this have a start time if it's missing?
+
+**Brook:**
+oh... ignore that. sorry. that one was because the video recorded but there was no ocular data
+
+-----------------------------
+
+
+**Brook:**
+oh... and back to data... the ones that are in two parts... RM's sleep deprived, and AH's rested conditions... can we combine those two into one? basically have part one from the start time, then just add part two at the end of part one (but starting from part two's start time) - if that makes sense
+
+**Al:**
+yep, know what you mean, very easy.
+
+-------------------------------------
+
+
+**Brook:**
+is it possible to have all averages for my data sorted by Friday 24th? that's two weeks from now
+
+**Al:**
+yes
+I would estimate that it would be done by Wednesday.
+
+**Brook:**
+meant 26th.
+oh. even better!
+I just have my manuscript planned out in chunks and need to complete results section by first week of October ...
+
+--------------------------
+**Al:**
+hey in the start time document there are two sets of file with the initials JA, are there two participants with those initials?
+*files
+
+**Brook:**
+that would be my mistake. fixed.
+
+
+-------------------------
+
+**Al:**
+Now that I have a list of the files and a way to load them and a method to bin the data into minutes, the next step is to join the two broken files. 
