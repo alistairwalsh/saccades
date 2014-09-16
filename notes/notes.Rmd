@@ -35,6 +35,7 @@ oh. even better!
 I just have my manuscript planned out in chunks and need to complete results section by first week of October ...
 
 --------------------------
+
 **Al:**
 hey in the start time document there are two sets of file with the initials JA, are there two participants with those initials?
 *files
@@ -46,6 +47,8 @@ that would be my mistake. fixed.
 -------------------------
 
 **Al:**
+
 Now that I have a list of the files and a way to load them and a method to bin the data into minutes, the next step is to join the two broken files. 
+
 ---------------------------
 
