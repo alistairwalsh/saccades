@@ -47,5 +47,5 @@ that would be my mistake. fixed.
 
 **Al:**
 Now that I have a list of the files and a way to load them and a method to bin the data into minutes, the next step is to join the two broken files. 
----------------------------
 
+--------------------------
