@@ -13,7 +13,7 @@ creating a file list for iterating over and gathering data
 '''
 
 
-folders = list.dirs("~/Dropbox/Ocular data/raw data")
+folders = list.dirs("~/saccades/data")
 list.files(folders[2])
 list.files(folders[3])
 
