@@ -1,6 +1,9 @@
-# get file handle to load data for AH
-fhandle1 <- saccade_data_file_list[1]
-fhandle2 <- saccade_data_file_list[2]
+
+#not finished!
+
+# get file handle to load data for RM
+fhandle1 <- saccade_data_file_list[9]
+fhandle2 <- saccade_data_file_list[10]
 fhandle1
 fhandle2
 
@@ -16,25 +19,25 @@ head(dfile_part2[1:6])
 start_times <- read.csv('start_time_machine_readable.csv',header = TRUE, sep = ',')
 
 #slice out start time for AH part2
-AH_part2_start <- start_times$Start[start_times$Participant == 'AH' & start_times$Notes == 'part2' ]
-AH_part2_start
+RM_part2_start <- start_times$Start[start_times$Participant == 'RM' & start_times$Notes == 'part 2' ]
+RM_part2_start
 
 
 #get the next saccade that is after that time, *1000 is to convert from milli to micro 
-starting_line <- dfile_part2[dfile_part2$Start>= AH_part2_start*1000,][1,]
+starting_line <- dfile_part2[dfile_part2$Start>= RM_part2_start*1000,][1,]
 starting_line$Start
 
 #ok now get the last three saccades from part one and find an average inter saccade time.
-dfile_part1[(nrow(dfile_part1)-3):(nrow(dfile_part1)),c(4:5)]
+IST_table <- dfile_part1[(nrow(dfile_part1)-3):(nrow(dfile_part1)),c(4:5)]
 
-#dfile_part1 has 4334 obs. start col is 4, end col is 5
-IST1 <- (dfile_part1[4332,4]-dfile_part1[4331,5])
-IST2 <- (dfile_part1[4333,4]-dfile_part1[4332,5])
-IST3 <- (dfile_part1[4334,4]-dfile_part1[4333,5])
+#dfile_part1 has 5973 obs. start col is 4, end col is 5
+IST1 <- (IST_table$Start[2]-IST_table$End[1])
+IST2 <- (IST_table$Start[3]-IST_table$End[2])
+IST3 <- (IST_table$Start[4]-IST_table$End[3])
 IST <- mean(IST1,IST2,IST3)
 
 #meanIST is 937935, add this to end of part 1
-part2_start <- dfile_part1[4333,5] + IST
+part2_start <- dfile_part1[nrow(dfile_part1),5] + IST
 
 #how much do I need to change part2 times by?
 diff_to_take <- starting_line$Start - part2_start
@@ -63,7 +66,7 @@ nrow(dfile_part1)+nrow(dfile_part2)==nrow(dfile_complete)
 mean(c(dfile_part1$Duration,dfile_part2$Duration))==mean(dfile_complete$Duration)
 mean(c(dfile_part1$Duration,dfile_part2$Duration))==mean(dfile_complete$End-dfile_complete$Start)
 
-#Is the length sensible - Yes :-) 121.6533 minutes!
+#Is the length sensible - Yes :-) 78.4204 minutes?
 ((dfile_complete$End[nrow(dfile_complete)]-dfile_complete$Start[1])/1000000)/60
 
 # fhandle_complete <- paste0('SMI_'
@@ -74,9 +77,9 @@ mean(c(dfile_part1$Duration,dfile_part2$Duration))==mean(dfile_complete$End-dfil
 
 ####################################
 
-save(AH_rested,file='AH_rested.R')
-load('AH_rested.R')
+save(RM_SD,file='RM_SD.R')
+load('RM_SD.R')
 #To load data and rename to AH_rested
 load('SMI_008AH 201230915 - Rested SACCADES.txt' )
-AH_rested <- dfile_complete
+RM_SD <- dfile_complete
 
