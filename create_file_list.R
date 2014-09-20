@@ -11,9 +11,9 @@ list.dirs(path = ".", full.names = TRUE, recursive = TRUE)
 
 creating a file list for iterating over and gathering data
 '''
+setwd("~/Documents/Rprojects/saccades")
 
-
-folders = list.dirs("~/saccades/data")
+folders = list.dirs("data")
 list.files(folders[2])
 list.files(folders[3])
 
