@@ -1,6 +1,3 @@
-
-#not finished!
-
 # get file handle to load data for RM
 fhandle1 <- saccade_data_file_list[9]
 fhandle2 <- saccade_data_file_list[10]
