@@ -30,6 +30,6 @@ load_data <- function (fhandle) {
     dfile$condition <- as.factor("Sleep.Deprived")
   }
   print(whois)
-  assign(dfile,whois)
-  return(whois)  
+  #assign(dfile,whois)
+  return(dfile)  
   }
