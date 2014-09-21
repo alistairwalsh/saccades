@@ -5,11 +5,13 @@ source('~/Documents/Rprojects/saccades/load_data.R')
 master <- data.frame()
 saccade_data_file_list <- create_file_list()
 
-for (i in list){
+list <- saccade_data_file_list[-c(1,2,9,10)]
 
-dfile <- load_data(i)
-
-rbind(master,dfile)
+for (i in 1:length(list)){
+print(list[i])
+print(i)
+assign(paste0('data',i),load_data(list[i]))
+master <- rbind(data1)
 }
 
 name <- strsplit(fhandle,'.txt')[[1]]
